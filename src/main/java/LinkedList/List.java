@@ -33,11 +33,10 @@ public class List<T> {
 
         Node<T> newNode = new Node<T>(data);
 
-        if(head == null) {
+        if (head == null) {
             head = newNode;
             tail = newNode;
-        }
-        else {
+        } else {
             Node temp = head;
             head = newNode;
             head.Next = temp;
@@ -52,7 +51,7 @@ public class List<T> {
 
             System.out.println("list is empty");
         } else {
-            System.out.println("singly linked list: ");
+            System.out.println(" linked list: ");
             while (current != null) {
 
                 System.out.println(current.data + "");

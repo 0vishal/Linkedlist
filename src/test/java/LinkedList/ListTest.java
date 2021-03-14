@@ -7,7 +7,7 @@ public class ListTest {
     List list;
 
     @BeforeAll
-    public void execute() {
+    public  void execute() {
         list = new List();
 }
     @Test
@@ -17,5 +17,12 @@ public class ListTest {
         list.addNode(30);
         list.addNode(70);
 }
- 
-    }
+
+    @Test
+    public void addStart() {
+
+       list.addStart(56);
+       list.addStart(30);
+       list.addStart(70);
+}
+    
