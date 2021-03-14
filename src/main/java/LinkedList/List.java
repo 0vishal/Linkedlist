@@ -43,6 +43,19 @@ public class List<T> {
         }
     }
 
+    public void append(T data) {
+        Node<T> newNode = new Node<T>(data);
+        if(head == null) {
+
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            tail.Next = newNode;
+            tail = newNode;
+        }
+    }
+
 
     public void displayList() {
         Node<T> current = head;
