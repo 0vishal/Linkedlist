@@ -32,4 +32,13 @@ public class ListTest {
        list.append(30);
        list.append(70);
     }
-}
+
+    @Test
+    public void insert() {
+
+        list.append(56);
+        list.append(70);
+
+        list.insert(30,1)
+
+    }

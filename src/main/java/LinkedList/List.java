@@ -56,6 +56,25 @@ public class List<T> {
         }
     }
 
+    public Node insert(T data, int position){
+
+        Node<T> newnode = new Node<T>(data);
+        newnode.data = data;
+        Node<T> current = head;
+        Node<T> previous = null;
+        int count=0;
+        while (count < position) {
+            previous = current;
+            current = current.Next;
+            count++;
+        }
+        newnode.Next = current;
+        if (previous != null) {
+            previous.Next = newnode;
+            return head;
+        }
+        return newnode;
+    }
 
     public void displayList() {
         Node<T> current = head;
