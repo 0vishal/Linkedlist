@@ -92,39 +92,62 @@ public class List<T> {
         }
     }
     public void deleteEnd() {
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is empty");
             return;
-        }
-        else {
-            if(head != tail ) {
+        } else {
+            if (head != tail) {
                 Node current = head;
-                while(current.Next != tail) {
+                while (current.Next != tail) {
                     current = current.Next;
                 }
                 tail = current;
                 tail.Next = null;
-            }
-            else {
+            } else {
                 head = tail = null;
             }
         }
-
-    public void displayList() {
-        Node<T> current = head;
-
-        if (head == null) {
-
-            System.out.println("list is empty");
-        } else {
-            System.out.println(" linked list: ");
-            while (current != null) {
-
-                System.out.println(current.data + "");
-                current = current.Next;
-            }
-
-        }
     }
 
-}
+    public void search(T data) {
+        Node<T> current = head;
+        int i = 1;
+        boolean flag = false;
+
+        if(head == null) {
+            System.out.println("List is empty");
+        }
+        else {
+            while(current != null) {
+                if(current.data != data)
+                {
+                    current = current.Next;
+                    i=i+1;
+                }
+                flag=true;
+                break;
+            }
+        }
+        if(flag==true)
+            System.out.println("" +data+ " is at position "+ i);
+        else
+            System.out.println("not in the list");
+    }
+        public void displayList () {
+            Node<T> current = head;
+
+            if (head == null) {
+
+                System.out.println("list is empty");
+            } else {
+                System.out.println(" linked list: ");
+                while (current != null) {
+
+                    System.out.println(current.data + "");
+                    current = current.Next;
+                }
+
+            }
+        }
+
+    }
