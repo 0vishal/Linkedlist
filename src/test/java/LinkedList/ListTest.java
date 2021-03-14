@@ -39,6 +39,15 @@ public class ListTest {
         list.append(56);
         list.append(70);
 
-        list.insert(30,1)
+        list.insert(30,1);
 
     }
+    @Test
+    public void delete() {
+
+        list.addStart(56);
+        list.addStart(30);
+        list.addStart(70);
+        list.delete();
+}
+}

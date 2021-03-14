@@ -75,6 +75,22 @@ public class List<T> {
         }
         return newnode;
     }
+    public void delete() {
+
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        else {
+
+            if(head != tail) {
+                head = head.Next;
+            }
+            else {
+                head = tail = null;
+            }
+        }
+    }
 
     public void displayList() {
         Node<T> current = head;
