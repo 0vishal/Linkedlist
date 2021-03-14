@@ -91,6 +91,24 @@ public class List<T> {
             }
         }
     }
+    public void deleteEnd() {
+        if(head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        else {
+            if(head != tail ) {
+                Node current = head;
+                while(current.Next != tail) {
+                    current = current.Next;
+                }
+                tail = current;
+                tail.Next = null;
+            }
+            else {
+                head = tail = null;
+            }
+        }
 
     public void displayList() {
         Node<T> current = head;
