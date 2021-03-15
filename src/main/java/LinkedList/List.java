@@ -133,6 +133,19 @@ public class List<T> {
         else
             System.out.println("not in the list");
     }
+
+    public void insertafterkey(T key,T data) {
+        Node<T> current = head;
+        while (current != key)
+        {
+            current= current.Next;
+        }
+        Node<T> new_node = new Node<T>(data);
+        Node<T> prev_node = current.Next;
+        current.Next = new_node;
+        new_node.Next = prev_node;
+
+    }
         public void displayList () {
             Node<T> current = head;
 

@@ -65,4 +65,13 @@ public class ListTest {
         list.addStart(70);
         list.search(30);
 }
+    @Test
+    public void insertafterkey() {
+        list.addStart(56);
+        list.addStart(30);
+        list.addStart(70);
+        list.insertafterkey(30,40);
+    }
+
+    
 }
