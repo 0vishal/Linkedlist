@@ -14,4 +14,9 @@ public class StackQueue<T> {
             this.listadd.displayList();
         }
     }
+
+    public void pop() {
+            this.listadd.delete();
+            this.listadd.displayList();
+
 }
