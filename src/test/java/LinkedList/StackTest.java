@@ -33,4 +33,24 @@ public class StackTest {
                 stackqueue.pop();
             }
         }
+
+        @Test
+        public void queuepush()
+        {
+            stackqueue.queuepush(56);
+            stackqueue.queuepush(30);
+            stackqueue.queuepush(70);
+        }
+
+        @Test
+        public void queuepop()
+        {
+        stackqueue.push(56);
+        stackqueue.push(30);
+        stackqueue.push(70);
+        for (int i=0;i<3;i++)
+        {
+            stackqueue.queuepop();
+        }
+        }
     }
