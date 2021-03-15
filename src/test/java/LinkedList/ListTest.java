@@ -81,4 +81,14 @@ public class ListTest {
         list.addStart(70);
         list.deletekey(40);
     }
+
+    @Test
+    public void sort() {
+        list.addStart(56);
+        list.addStart(30);
+        list.addStart(40);
+        list.addStart(70);
+        list.sort();
+
+    }
 }

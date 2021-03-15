@@ -45,24 +45,23 @@ public class List<T> {
 
     public void append(T data) {
         Node<T> newNode = new Node<T>(data);
-        if(head == null) {
+        if (head == null) {
 
             head = newNode;
             tail = newNode;
-        }
-        else {
+        } else {
             tail.Next = newNode;
             tail = newNode;
         }
     }
 
-    public Node insert(T data, int position){
+    public Node insert(T data, int position) {
 
         Node<T> newnode = new Node<T>(data);
         newnode.data = data;
         Node<T> current = head;
         Node<T> previous = null;
-        int count=0;
+        int count = 0;
         while (count < position) {
             previous = current;
             current = current.Next;
@@ -75,22 +74,22 @@ public class List<T> {
         }
         return newnode;
     }
+
     public void delete() {
 
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is empty");
             return;
-        }
-        else {
+        } else {
 
-            if(head != tail) {
+            if (head != tail) {
                 head = head.Next;
-            }
-            else {
+            } else {
                 head = tail = null;
             }
         }
     }
+
     public void deleteEnd() {
         if (head == null) {
             System.out.println("List is empty");
@@ -114,31 +113,28 @@ public class List<T> {
         int i = 1;
         boolean flag = false;
 
-        if(head == null) {
+        if (head == null) {
             System.out.println("List is empty");
-        }
-        else {
-            while(current != null) {
-                if(current.data != data)
-                {
+        } else {
+            while (current != null) {
+                if (current.data != data) {
                     current = current.Next;
-                    i=i+1;
+                    i = i + 1;
                 }
-                flag=true;
+                flag = true;
                 break;
             }
         }
-        if(flag==true)
-            System.out.println("" +data+ " is at position "+ i);
+        if (flag == true)
+            System.out.println("" + data + " is at position " + i);
         else
             System.out.println("not in the list");
     }
 
-    public void insertafterkey(T key,T data) {
+    public void insertafterkey(T key, T data) {
         Node<T> current = head;
-        while (current != key)
-        {
-            current= current.Next;
+        while (current != key) {
+            current = current.Next;
         }
         Node<T> new_node = new Node<T>(data);
         Node<T> prev_node = current.Next;
@@ -147,6 +143,7 @@ public class List<T> {
 
     }
 
+}
     public void deletekey(T key) {
 
         Node<T> temp = head, prev = null;
@@ -163,6 +160,36 @@ public class List<T> {
             return;
 
         prev.Next = temp.Next;
+    }
+
+    public void sort() {
+
+        Node<T> current=head;
+        Node<T> index;
+        T temp;
+
+        if(head == null)
+        {
+            return;
+        }
+        else
+        {
+            while(current != null)
+            {
+                index=current.Next;
+                while(index != null) {
+
+                    if(current.data>index.data)
+                    {
+                        temp=(T) current.data;
+                        current.data=index.data;
+                        index.data=temp;
+                    }
+                    index=index.Next;
+                }
+                current=current.Next;
+            }
+        }
     }
         public void displayList () {
             Node<T> current = head;
